@@ -4,7 +4,7 @@ from datetime import datetime
 
 app = FastAPI()
 
-UPLOAD_DIR = "/data/uploads"   # persistent disk
+UPLOAD_DIR = "/uploads"   # persistent disk
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 
