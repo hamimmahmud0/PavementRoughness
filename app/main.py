@@ -43,6 +43,11 @@ def download_file(filename: str):
     return FileResponse(path=file_path, media_type="text/csv", filename=filename)
 
 
+@app.get("/healthcheck")
+def healthcheck():
+    return {"status": "ok"}
+
+
 @app.get("/files")
 def list_files():
     cleanup_old_files()  # remove old files before listing
