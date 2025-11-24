@@ -52,3 +52,14 @@ def download_file(filename: str):
         media_type="text/csv",
         filename=filename
     )
+
+@app.get("/files")
+def list_files():
+    try:
+        files = [
+            f for f in os.listdir(UPLOAD_DIR)
+            if os.path.isfile(os.path.join(UPLOAD_DIR, f)) and f.endswith(".csv")
+        ]
+        return {"files": files}
+    except Exception as e:
+        return {"error": str(e)}
