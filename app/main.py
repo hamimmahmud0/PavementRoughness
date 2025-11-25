@@ -44,8 +44,10 @@ def upload_to_dropbox(local_path: str, dropbox_path: str):
     )
 
     if res.status_code != 200:
+        print(res.json())
         raise HTTPException(status_code=500, detail=f"Dropbox error: {res.text}")
 
+    
     return res.json()
 
 
