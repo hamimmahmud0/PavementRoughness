@@ -70,7 +70,7 @@ async def upload_file(file: UploadFile = File(...)):
     # Upload automatically to Dropbox
     dropbox_result = upload_to_dropbox(
         local_path=file_path,
-        dropbox_path=f"{file.filename}"
+        dropbox_path=f"/{file.filename}"
     )
 
     return {
