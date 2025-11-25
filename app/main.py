@@ -12,7 +12,7 @@ app = FastAPI()
 UPLOAD_DIR = os.path.join(tempfile.gettempdir(), "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-MAX_FILE_AGE = 7 * 24 * 60 * 60  # 7 days
+MAX_FILE_AGE = 2 * 60 * 60  # 2 hours
 
 # Dropbox token stored in Render environment variables
 DROPBOX_TOKEN = os.getenv("DROPBOX_TOKEN")
